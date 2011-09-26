@@ -1,0 +1,66 @@
+                                                                                                           <!DOCTYPE HTML>
+<html>
+  <head>
+
+    <title>Entity Extraction API</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/reset.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/style.css" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/demo.js"></script>
+  </head>
+
+  <body>
+
+    <div id="banner">
+      <h1>Entity Extraction API</h1>
+    </div>
+
+    <div id="content">
+
+      <h3>Send some text to the service</h3>
+
+      <form id="search" action="/">
+        <textarea name="text">They are expected to involve a 50% write-down of Greece's massive government debt, the BBC's business editor Robert Peston says        </textarea>
+        <br />
+        <input type="submit" value="Get entities" />
+      </form>
+
+      <div id="results">
+
+      </div>
+
+      <br style="clear:both" />
+
+      <h3>API Usage</h3>
+
+      <pre>
+        <code>
+          # POST /extract (adding your text to post body!)
+          #
+          {
+            "entities" : [
+              {
+                "text" : "Greece",
+                "type" : "LOCATION"
+              },
+              {
+                "text" : "BBC",
+                "type" : "ORGANIZATION"
+              },
+              {
+                "text" : "Robert Peston",
+                "type" : "PERSON"
+              }
+            ]
+          }
+        </code>
+      </pre>
+
+    </div>
+
+  </body>
+
+</html>
