@@ -16,7 +16,7 @@ ssh_options[:forward_agent] = true
 set :deploy_via, :remote_cache
 set :keep_releases,5
 
-role :web, "berlin.bbcsnippets.co.uk"
+role :web, "bbcsnippets.co.uk"
 role :app, "bbcsnippets.co.uk"
 
 #If you are using Passenger mod_rails uncomment this:
@@ -38,7 +38,7 @@ namespace :bundler do
 
   task :bundle_new_release, :roles => :app do
     bundler.create_symlink
-    run "cd #{release_path} && bundle install --path /home/www-data/.bundler/ --without test sqlite"
+    run "JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk cd #{release_path} && bundle install --path /home/www-data/.bundler/ --without test sqlite"
   end
 end
 
