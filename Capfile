@@ -38,7 +38,7 @@ namespace :bundler do
 
   task :bundle_new_release, :roles => :app do
     bundler.create_symlink
-    run "JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk cd #{release_path} && bundle install --path /home/www-data/.bundler/ --without test sqlite"
+    run "export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk && cd #{release_path} && bundle install --path /home/www-data/.bundler/ --without test sqlite"
   end
 end
 
