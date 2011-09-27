@@ -1,6 +1,6 @@
 require 'sinatra'
 
-ENV['JAVA_HOME'] = "/usr/lib/jvm/java-1.6.0-openjdk/"
+ENV['JAVA_HOME'] = "/usr/lib/jvm/java-6-sun"
 
 require 'app.rb'
 
