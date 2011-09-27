@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 require 'app/models/extract'
 
-post '/extract' do
+post '/entities' do
   content_type :json
   text    = params[:text]
   extract = Extract.extract(text)
